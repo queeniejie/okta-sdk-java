@@ -18,6 +18,7 @@ import org.joda.time.format.ISODateTimeFormat;
 
 public class Utils {
 
+    private static final String STRING = "";
     protected static DateTimeFormatter DATE_TIME_FORMATTER = ISODateTimeFormat.dateTime();
     protected static int DEFAULT_RESULTS_LIMIT = 200;
 
