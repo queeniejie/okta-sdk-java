@@ -62,7 +62,7 @@ public class AuthenticateWithActivationToken {
             User result = userApiClient.getUser(user.getId());
             assertEquals(result.getStatus(), "PROVISIONED");
 
-            AuthResult authResult = authApiClient.authenticate(activationResponse.getActivationToken());
+            AuthResult authResult = authApiClient.authenticateWithActivationToken(activationResponse.getActivationToken());
             assertEquals(authResult.getStatus(), "PASSWORD_RESET");
             assertNotNull(authResult.getStateToken());
 
@@ -115,7 +115,7 @@ public class AuthenticateWithActivationToken {
             User result = userApiClient.getUser(user.getId());
             assertEquals(result.getStatus(), "ACTIVE");
 
-            AuthResult authResult = authApiClient.authenticate(activationResponse.getActivationToken());
+            AuthResult authResult = authApiClient.authenticateWithActivationToken(activationResponse.getActivationToken());
             assertNotNull(authResult.getSessionToken());
             assertEquals(authResult.getStatus(), "SUCCESS");
         }
